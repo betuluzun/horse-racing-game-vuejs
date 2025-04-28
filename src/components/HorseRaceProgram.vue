@@ -1,50 +1,22 @@
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 export default {
-  name: 'PeopleTable',
-  data() {
+  setup() {
+    const store = useStore()
+    const lap1 = computed(() => store.getters.lap1)
+    const lap2 = computed(() => store.getters.lap2)
+    const lap3 = computed(() => store.getters.lap3)
+    const lap4 = computed(() => store.getters.lap4)
+    const lap5 = computed(() => store.getters.lap5)
+    const lap6 = computed(() => store.getters.lap6)
     return {
-      list: [
-        {
-          name: 'Ada',
-          position: 1,
-        },
-        {
-          name: 'Ada',
-          position: 2,
-        },
-        {
-          name: 'Ada',
-          position: 3,
-        },
-        {
-          name: 'Ada',
-          position: 4,
-        },
-        {
-          name: 'Ada',
-          position: 5,
-        },
-        {
-          name: 'Ada',
-          position: 6,
-        },
-        {
-          name: 'Ada',
-          position: 7,
-        },
-        {
-          name: 'Ada',
-          position: 8,
-        },
-        {
-          name: 'Ada',
-          position: 9,
-        },
-        {
-          name: 'Ada',
-          position: 10,
-        },
-      ],
+      lap1,
+      lap2,
+      lap3,
+      lap4,
+      lap5,
+      lap6,
     }
   },
 }
@@ -61,8 +33,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap1" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>
@@ -76,8 +48,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap2" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>
@@ -91,8 +63,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap3" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>
@@ -106,8 +78,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap4" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>
@@ -121,8 +93,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap5" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>
@@ -136,8 +108,8 @@ export default {
             <th>Position</th>
             <th>Name</th>
           </tr>
-          <tr v-for="horse in list" :key="horse.position">
-            <td>{{ horse.position }}</td>
+          <tr v-for="(horse, index) in lap6" :key="index">
+            <td>{{ index + 1 }}</td>
             <td>{{ horse.name }}</td>
           </tr>
         </tbody>

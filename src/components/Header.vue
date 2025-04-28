@@ -3,14 +3,27 @@
   <div id="header">
     <h1>Horse Racing</h1>
     <div>
-      <button>Generate Program</button>
-      <button>Start/Pause</button>
+      <button @click="generateProgram">Generate Program</button>
+      <button @click="startRace">Start</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { useStore } from 'vuex'
+export default {
+  setup() {
+    const store = useStore()
+
+    const generateProgram = () => store.dispatch('generateLists')
+    const startRace = () => store.dispatch('startRace')
+
+    return {
+      generateProgram,
+      startRace,
+    }
+  },
+}
 </script>
 
 <style>

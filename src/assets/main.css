@@ -37,7 +37,7 @@ h6 {
   padding: 2px 15px;
 }
 .styled-table.narrow th:first-child {
-  max-width: 20px;
+  width: 30px;
 }
 
 .styled-table tbody tr {
@@ -50,4 +50,19 @@ h6 {
 
 .styled-table tbody tr th {
   color: white;
+}
+
+@keyframes moveRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.move {
+  position: relative;
+  animation: moveRight 3s linear none;
+  animation-iteration-count: 1;
 }
